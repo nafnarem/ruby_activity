@@ -6,6 +6,5 @@ if num%2 == 0
   new_arr = arr.map{|new| new}
   new_arr.push(num)
   puts "new array is as follows #{new_arr}"
-else puts "#{num} not divisible by 2"
 end
 
