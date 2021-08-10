@@ -1,10 +1,10 @@
 CREATE TABLE students (
-  id integer PRIMARY KEY,
-  first_name VARCHAR(50),
-  middle_name VARCHAR(50),
-  last_name VARCHAR(50),
-  age integer,
-  location VARCHAR(50)
+  id integer PRIMARY KEY NOT NULL,
+  first_name VARCHAR(50) NOT NULL,
+  middle_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  age integer NOT NULL,
+  location VARCHAR(50) NOT NULL
 );
 
 INSERT INTO 
