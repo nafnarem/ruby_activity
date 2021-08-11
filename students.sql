@@ -30,3 +30,41 @@ SELECT * FROM students WHERE location = 'Manila';
 SELECT AVG(age) FROM students;
 
 SELECT * FROM students ORDER BY age desc;
+
+CREATE TABLE classrooms (
+  id integer NOT NULL,
+  student_id integer,
+  section VARCHAR(50),
+  PRIMARY KEY (id)
+);
+
+INSERT INTO
+  classrooms(id, student_id, section)
+VALUES
+  (1 , 1, 'A'),
+  (2 , 2, 'A'),
+  (3 , 3, 'B'),
+  (4 , 4, 'C'),
+  (5 , 5, 'B'),
+  (6 , 6, 'A'),
+  (7 , 7, 'C'),
+  (8 , 8, 'B'),
+  (9 , 9, 'B'),
+  (10 , 10, 'C');
+  
+SELECT  students.id, students.first_name, students.last_name, students.location, classrooms.section
+FROM students
+Inner JOIN classrooms ON students.id = classrooms.student_id
+ORDER BY classrooms.student_id;
+
+SELECT *
+FROM students
+LEFT JOIN classrooms ON students.id = classrooms.student_id;
+
+SELECT *
+FROM students
+RIGHT JOIN classrooms ON students.id = classrooms.student_id;
+
+SELECT *
+FROM students
+FULL JOIN classrooms ON students.id = classrooms.student_id;
